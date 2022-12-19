@@ -1,0 +1,39 @@
+﻿@model PSoftware.Models.TheLoai
+
+@{
+    ViewBag.Title = "Thêm thể loại";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*@Html.HiddenFor(model => model.MaLSP)*@
+        <div class="container card" style="width: 55rem; padding: 30px; margin-top: 10px; margin-bottom: 10px;">
+            <h3 style="margin: 20px 0px; text-align: center">THÊM THỂ LOẠI</h3>
+            <hr />
+            <div class="form-row">
+                @*<div class="form-group col">
+                        @Html.LabelFor(model => model.MaLSP, "Mã loại sản phẩm", htmlAttributes: new { @for = "inputMaLSP" })
+                        @Html.EditorFor(model => model.MaLSP, new { htmlAttributes = new { @class = "form-control", @id = "inputMaLSP", @readonly = "" } })
+                        @Html.ValidationMessageFor(model => model.MaLSP, "", new { @class = "text-danger" })
+                    </div>*@
+                <div class="form-group col">
+                    @Html.LabelFor(model => model.TenTL, "Tên thể loại", htmlAttributes: new { @for = "inputTenTL" })
+                    @Html.EditorFor(model => model.TenTL, new { htmlAttributes = new { @class = "form-control", @id = "inputTenTL" } })
+                    @Html.ValidationMessageFor(model => model.TenTL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="form-group text-center">
+                <input type="submit" value="Thêm thể loại" class="btn btn-primary text-white" style="width: 200px; margin-top: 20px;" />
+            </div>
+            <div class="form-group text-center">
+                @Html.ActionLink("Quay lại danh sách thể loại", "Index")
+            </div>
+        </div>
+    </div>
+}

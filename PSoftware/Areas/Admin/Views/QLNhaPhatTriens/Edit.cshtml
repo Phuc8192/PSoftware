@@ -1,0 +1,39 @@
+﻿@model PSoftware.Models.NhaPhatTrien
+
+@{
+    ViewBag.Title = "Chỉnh sửa nhà phát triển";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaNPT)
+        <div class="container card" style="width: 55rem; padding: 30px; margin-top: 10px; margin-bottom: 10px;">
+            <h3 style="margin: 20px 0px; text-align: center">CHỈNH SỬA NHÀ PHÁT TRIỂN</h3>
+            <hr />
+            <h5 style="margin-bottom: 10px">Thông tin cơ bản</h5>
+            <div class="form-row">
+                <div class="form-group col">
+                    @Html.LabelFor(model => model.MaNPT, "Mã nhà phát triển", htmlAttributes: new { @for = "inputMaNPT" })
+                    @Html.EditorFor(model => model.MaNPT, new { htmlAttributes = new { @class = "form-control", @id = "inputMaNPT", @readonly = "" } })
+                    @Html.ValidationMessageFor(model => model.MaNPT, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col">
+                    @Html.LabelFor(model => model.TenNPT, "Tên nhà phát triển", htmlAttributes: new { @for = "inputTenNPT" })
+                    @Html.EditorFor(model => model.TenNPT, new { htmlAttributes = new { @class = "form-control", @id = "inputTenNPT" } })
+                    @Html.ValidationMessageFor(model => model.TenNPT, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="form-group text-center">
+                <input type="submit" value="Cập nhập nhà phát triển" class="btn btn-primary text-white" style="width: 200px; margin-top: 20px;" />
+            </div>
+            <div class="form-group text-center">
+                @Html.ActionLink("Quay lại danh sách nhà phát triển", "Index")
+            </div>
+        </div>
+    </div>
+}

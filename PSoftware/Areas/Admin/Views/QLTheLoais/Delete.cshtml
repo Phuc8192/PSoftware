@@ -1,0 +1,20 @@
+﻿@model PSoftware.Models.TheLoai
+
+@{
+    ViewBag.Title = "Xóa thể loại";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2 style="padding:30px 0px">XÓA THỂ LOẠI</h2>
+<h3>Bạn có chắc muốn xóa thể loại này?</h3>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Về lại danh sách", "Index")
+        </div>
+    }
+</div>

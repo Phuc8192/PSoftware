@@ -1,0 +1,11 @@
+﻿@model PSoftware.Models.CKEditor
+<script src="~/assets/plugins/ckeditor/ckeditor.js"></script>
+
+<div class="form-row">
+    @Html.LabelFor(model => model.NoiDung, "Nội dung", htmlAttributes: new { @for = "inputNoiDung" })
+    @Html.TextAreaFor(model => model.NoiDung, htmlAttributes: new { @class = "form-control", @id = "inputNoiDung", @style = "height: 200px; resize: none;", @placeholder = "Nhập văn bản vào đây..." })
+    @Html.ValidationMessageFor(model => model.NoiDung, "", new { @class = "text-danger" })
+    <script>
+        CKEDITOR.replace("inputNoiDung");
+    </script>
+</div>
