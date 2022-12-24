@@ -41,7 +41,8 @@
             <li>
                 <a href="#">
                     <i class='bx bx-search'></i>
-                    <span class="link_name search-box"><input type="text" placeholder="Search..."></span>
+                    @*<span class="link_name search-box"><input type="text" placeholder="Search..."></span>*@
+                    @Html.Partial("_SearchPartial")
                 </a>
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="#">Search</a></li>
@@ -179,7 +180,7 @@
                     else
                     {
                         <div class="name-job">
-                            <div class="profile_name"><a class="link_name" href="@Url.Action("Login", "User")">Đăng Nhập</a></div>
+                            <div class="profile_name"><a class="link_name" style="color:#F6F5FF" href="@Url.Action("Login", "User")">Đăng Nhập</a></div>
                             @*Đăng nhập*@
                             <div class="job">Khách hàng</div>
                         </div>

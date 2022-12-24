@@ -1,12 +1,16 @@
 ﻿@model IEnumerable<PSoftware.Models.SanPham>
 
 @{
-    ViewBag.Title = "";
+    ViewBag.Title = "Tìm Kiếm";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<link rel="stylesheet" href="~/Scripts/TheLoai/Details.css"/>
-<section style="background-color: #eee;">
+<link rel="stylesheet" href="~/Scripts/TheLoai/Details.css" />
+<div class="p-3">
+    <h3>Kết quả tìm kiếm cho: @ViewBag.tenSP</h3>
+</div>
+
+<section>
     <div class="container py-5">
         <div class="row">
             @foreach (var item in Model)
@@ -37,10 +41,10 @@
                                 <p class="text-muted mb-0">Thể loại: <span class="fw-bold">@item.TheLoai.TenTL</span></p>
                                 <div class="ms-auto text-success">
                                     @*<i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>*@
+                                        <i class="fa fa-star"></i>*@
                                     <i class="fa-solid fa-cart-plus"></i>
                                     @*<i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>*@
+                                        <i class="fa fa-star"></i>*@
                                 </div>
                             </div>
                         </div>
@@ -50,3 +54,4 @@
         </div>
     </div>
 </section>
+

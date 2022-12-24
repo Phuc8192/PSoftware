@@ -1,0 +1,6 @@
+﻿
+@using (Html.BeginForm("TimKiem", "SanPhams"))
+{
+    @Html.AntiForgeryToken()
+    <span class="link_name search-box"><input type="text" name="tenSP" placeholder="Search..."></span>
+}
