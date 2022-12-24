@@ -50,7 +50,7 @@ namespace PSoftware.Areas.Admin.Controllers
         // POST: Admin/QLSanPhams/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaSP,TenSP,Gia,NgayTao,NgayChinhSua,Anh,NoiDung,MaLSP,MaNPT,MaTL")] SanPham sanPham)
         {
@@ -135,6 +135,7 @@ namespace PSoftware.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             SanPham sanPham = db.SanPhams.Find(id);
+            //SanPham sanPham = db.SanPhams.Where(x => x.MaSP == id).Include(x => x.NoiDung).FirstOrDefault();
             if (sanPham == null)
             {
                 return HttpNotFound();
@@ -148,13 +149,14 @@ namespace PSoftware.Areas.Admin.Controllers
         // POST: Admin/QLSanPhams/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaSP,TenSP,Gia,NgayTao,NgayChinhSua,Anh,NoiDung,MaLSP,MaNPT,MaTL")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sanPham).State = EntityState.Modified;
+                sanPham.NgayChinhSua = System.DateTime.Now;
+                db.Entry(sanPham).State = EntityState.Modified;               
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

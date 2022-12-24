@@ -1,0 +1,6 @@
+﻿@model IEnumerable<PSoftware.Models.TheLoai>
+
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("Details", "TheLoais", new { id = @item.MaTL})">@item.TenTL</a></li>
+}

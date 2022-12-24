@@ -1,0 +1,12 @@
+﻿@*@model PSoftware.Models.CKEditor*@
+@model Tuple<PSoftware.Models.SanPham, PSoftware.Models.CKEditor>
+<script src="~/assets/plugins/ckeditor/ckeditor.js"></script>
+
+<div class="form-row">
+    @Html.LabelFor(model => model.Item1.NoiDung, "Nội dung", htmlAttributes: new { @for = "inputNoiDung" })
+    @Html.TextAreaFor(model => model.Item1.NoiDung, htmlAttributes: new { @class = "form-control", @id = "inputNoiDung", @style = "height: 200px; resize: none;", @placeholder = "Nhập văn bản vào đây...", @value = Model.Item1.NoiDung })
+    @Html.ValidationMessageFor(model => model.Item1.NoiDung, "", new { @class = "text-danger" })
+    <script>
+        CKEDITOR.replace("inputNoiDung");
+    </script>
+</div>

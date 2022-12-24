@@ -42,9 +42,10 @@
         alternatingRowStyle: "alternatingRowStyle",
         columns: new[]  // colums in grid
         {
-            grid.Column("MaSP","Mã SP"), //the model fields to display
+            /*grid.Column("MaSP","Mã SP"),*/ //the model fields to display
             grid.Column("TenSP","Tên SP"  ),
             grid.Column("Gia","Giá",format:@<text> @item.Gia.ToString("#,##0")</text>),
+            grid.Column("NgayTao","Ngày Thêm"),
             grid.Column("LoaiSanPham.TenLSP","Loại SP"),
             grid.Column("TheLoai.TenTL","Thể Loại"),
             grid.Column("NhaPhatTrien.TenNPT","Nhà Phát Triển"),

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PSoftware.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,13 @@ namespace PSoftware.Controllers
 {
     public class HomeController : Controller
     {
+        private PSoftwareEntities1 db = new PSoftwareEntities1();
         public ActionResult Index()
         {
-            return View();
+            //var sANPHAMs = db.SanPhams.OrderByDescending(s => s.NgayTao);
+            var sANPHAMs = db.SanPhams.OrderBy(s => Guid.NewGuid());
+            return View(sANPHAMs.ToList());
+            //return View();
         }
 
         public ActionResult About()

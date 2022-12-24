@@ -27,8 +27,8 @@ namespace PSoftware.Models
         public System.Guid MaSP { get; set; }
         public string TenSP { get; set; }
         public double Gia { get; set; }
-        public System.DateTime NgayTao { get; set; }
-        public System.DateTime NgayChinhSua { get; set; }
+        public DateTime NgayTao { get; set; }
+        public DateTime NgayChinhSua { get; set; }
         public string Anh { get; set; }
         public string NoiDung { get; set; }
         public System.Guid MaLSP { get; set; }
