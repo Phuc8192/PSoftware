@@ -179,10 +179,12 @@
     <Compile Include="Areas\Admin\Controllers\QLSanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLTheLoaisController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CKEditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSanPhamsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Controllers\TheLoaisController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -193,6 +195,7 @@
     <Compile Include="Models\BinhLuan.cs">
       <DependentUpon>PSoftware.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\CauHinhKhuyenNghi.cs">
       <DependentUpon>PSoftware.tt</DependentUpon>
     </Compile>
@@ -250,6 +253,8 @@
     <Compile Include="Models\TheLoai.cs">
       <DependentUpon>PSoftware.tt</DependentUpon>
     </Compile>
+    <Compile Include="MoMo\MoMoSercurity.cs" />
+    <Compile Include="MoMo\PaymentRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1294,7 +1299,9 @@
     <Folder Include="assets\plugins\ckfinder\plugins\watermark\bin\Debug\" />
     <Folder Include="assets\plugins\ckfinder\plugins\watermark\bin\Release\" />
     <Folder Include="Data\" />
+    <Folder Include="Views\Cart\" />
     <Folder Include="Views\CKEditor\" />
+    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
