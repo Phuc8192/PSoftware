@@ -21,8 +21,8 @@ namespace PSoftware.Controllers
             string accessKey = "qcGi0nwvXhzQ09J2";
             string serectkey = "eak52lxTAqOHELgIUdcB2LWX342N3MU8";
             string orderInfo = "Thanh toán hóa đơn";
-            string returnUrl = "https://localhost:44390/Payment/ReturnUrl/";
-            string notifyUrl = "https://localhost:44390/Payment/NotifyUrl/";
+            string returnUrl = "https://localhost:1280/Payment/ReturnUrl/";
+            string notifyUrl = "https://localhost:1280/Payment/NotifyUrl/";
 
             string amount = Convert.ToInt32(cart.Sum(x => x.ThanhTien)).ToString();
             string orderid = Session["MaHD"].ToString();
