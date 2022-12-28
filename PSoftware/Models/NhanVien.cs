@@ -11,7 +11,8 @@ namespace PSoftware.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class NhanVien
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,6 +25,8 @@ namespace PSoftware.Models
         public string HoNV { get; set; }
         public string TenNV { get; set; }
         public bool GioiTinh { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime NgaySinh { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }

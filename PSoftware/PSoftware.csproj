@@ -173,8 +173,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLKhachHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLLoaiSanPhamsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLNhanViensController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLNhaPhatTriensController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLSanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLTheLoaisController.cs" />
@@ -1229,6 +1231,12 @@
     <Content Include="assets\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="assets\plugins\ckeditor\SECURITY.md" />
     <Content Include="assets\plugins\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Areas\Admin\Views\QLSanPhams\IndexNC.cshtml" />
+    <Content Include="Areas\Admin\Views\QLNhanViens\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QLNhanViens\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QLNhanViens\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\QLNhanViens\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QLNhanViens\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1288,10 +1296,12 @@
     <Content Include="Views\SanPhams\TimKiem.cshtml" />
     <Content Include="Views\LoaiSanPhams\IndexGame.cshtml" />
     <Content Include="Views\LoaiSanPhams\IndexSoftware.cshtml" />
+    <Content Include="Views\SanPhams\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\HomeAdmin\" />
     <Folder Include="assets\plugins\ckfinder\plugins\fileeditor\bin\Debug\" />
     <Folder Include="assets\plugins\ckfinder\plugins\fileeditor\bin\Release\" />
     <Folder Include="assets\plugins\ckfinder\plugins\imageresize\bin\Debug\" />

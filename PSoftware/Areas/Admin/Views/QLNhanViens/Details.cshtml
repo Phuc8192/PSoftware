@@ -1,0 +1,215 @@
+﻿@model PSoftware.Models.NhanVien
+
+@{
+    ViewBag.Title = "Thông tin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+    string gtinh = "";
+    string pquyen = "";
+}
+
+<style>
+    .gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+}
+    a {
+        color: #ffffff;
+    }
+</style>
+
+<section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-8 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <div class="row g-0">
+                        <div class="col-md-4 gradient-custom text-center text-white"
+                             style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">                           
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                 alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                            <h5>@Html.DisplayFor(model => model.HoNV) @Html.DisplayFor(model => model.TenNV)</h5>
+                            <p>
+                                @{if (Model.PhanQuyen == true)
+                                    { pquyen = "Quản lý"; }
+                                    else
+                                    { pquyen = "Nhân viên"; }
+                                }
+                                @pquyen
+                            </p>
+                            <a title="Quay lại danh sách" class="text-decoration-none m-2" href="@Url.Action("Index", "QLNhanViens")">
+                                <i class="fa-solid fa-list"></i>
+                            </a>                          
+                            <a title="Chỉnh sửa" class="text-decoration-none m-2" href="@Url.Action("Edit", "QLNhanViens", new { id = Model.MaNV})">
+                                <i class="fa-solid fa-pen-to-square pr-2"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-4">
+                                <h6>Thông tin</h6>
+                                <hr class="mt-0 mb-4">
+                                <div class="row pt-1">
+                                    <div class="col-6 mb-3">
+                                        <h6>Giới tính</h6>
+                                        <p class="text-muted">
+                                            @{if (Model.GioiTinh == true)
+                                                { gtinh = "Nam"; }
+                                                else
+                                                { gtinh = "Nữ"; }
+                                            }
+                                            @gtinh
+                                        </p>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <h6>Ngày sinh</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.NgaySinh)</p>
+                                    </div>
+                                </div>
+                                <div class="row pt-1">
+                                    <div class="col-6 mb-3">
+                                        <h6>Email</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.Email)</p>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <h6>Điện thoại</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.SDT)</p>
+                                    </div>
+                                </div>
+                                <div class="row pt-1">
+                                    <div class="col-12 mb-3">
+                                        <h6>Địa chỉ</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.DiaChi)</p>
+                                    </div>
+                                </div>
+                                <h6>Tài Khoản</h6>
+                                <hr class="mt-0 mb-4">
+                                <div class="row pt-1">
+                                    <div class="col-6 mb-3">
+                                        <h6>Tên đăng nhập</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.TenDN)</p>
+                                    </div>
+                                    @*<div class="col-6 mb-3">
+                                        <h6>Most Viewed</h6>
+                                        <p class="text-muted">Dolor sit amet</p>
+                                    </div>*@
+                                </div>
+                                @*<div class="d-flex justify-content-start">
+                                    <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                                    <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                                    <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+            @*<h2>Details</h2>
+
+                <div>
+                    <h4>NhanVien</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.HoNV)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.HoNV)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TenNV)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TenNV)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.GioiTinh)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.GioiTinh)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NgaySinh)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NgaySinh)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.SDT)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.SDT)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DiaChi)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DiaChi)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TenDN)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TenDN)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.MatKhau)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.MatKhau)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PhanQuyen)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PhanQuyen)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Anh)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Anh)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.MaNV }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>*@

@@ -2,8 +2,8 @@
 
 @{
     ViewBag.Title = "Danh sách sản phẩm";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
-    var grid = new WebGrid(Model, canPage: true, defaultSort: "MaSP", rowsPerPage: 10);
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "TenSP", rowsPerPage: 10);
 }
 
 <style>

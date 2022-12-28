@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Thêm sản phẩm";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
 @using (Html.BeginForm())
@@ -15,54 +15,54 @@
             <h3 style="margin: 20px 0px; text-align: center">THÊM SẢN PHẨM</h3>
             <hr />
             <h5 style="margin-bottom: 10px">Thông tin cơ bản</h5>
-            <div class="form-row">
-                <div class="form-group col">
+            <div class="row">
+                <div class="col">
                     @Html.LabelFor(model => model.MaSP, "Mã sản phẩm", htmlAttributes: new { @for = "inputMaSP" })
                     <input type="text" value="@ViewBag.MaSP" disabled readonly class="form-control" />
                     @*@Html.EditorFor(model => model.MaSP, new { htmlAttributes = new { @class = "form-control", @id = "inputMaSP" } })*@
                     @Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group col">
+                <div class="col">
                     @Html.LabelFor(model => model.TenSP, "Tên sản phẩm", htmlAttributes: new { @for = "inputTenSP" })
                     @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control", @id = "inputTenSP" } })
                     @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-10">
+            <div class="row">
+                <div class="col-10">
                     @Html.LabelFor(model => model.Gia, "Giá sản phẩm", htmlAttributes: new { @for = "inputGia" })
                     @Html.EditorFor(model => model.Gia, new { htmlAttributes = new { @class = "form-control", @id = "inputGia" } })
                     @Html.ValidationMessageFor(model => model.Gia, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group col-2">
+                <div class="col-2">
                     <label for="donvi">Đơn vị</label>
                     <div class="form-control" id="donvi" style="text-align: center">VNĐ</div>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col">
+            <div class="row">
+                <div class="col">
                     @Html.LabelFor(model => model.MaNPT, "Nhà phát triển", htmlAttributes: new { @for = "inputMaNPT" })
                     @Html.DropDownList("MaNPT", null, htmlAttributes: new { @class = "form-control", @id = "inputMaNPT" })
                     @Html.ValidationMessageFor(model => model.MaNPT, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group col">
+                <div class="col">
                     @Html.LabelFor(model => model.MaLSP, "Loại sản phẩm", htmlAttributes: new { @for = "inputMaLSP" })
                     @Html.DropDownList("MaLSP", null, htmlAttributes: new { @class = "form-control", @id = "inputMaLSP" })
                     @Html.ValidationMessageFor(model => model.MaLSP, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group col">
+                <div class="col">
                     @Html.LabelFor(model => model.MaTL, "Thể loại", htmlAttributes: new { @for = "inputMaTL" })
                     @Html.DropDownList("MaTL", null, htmlAttributes: new { @class = "form-control", @id = "inputMaTL" })
                     @Html.ValidationMessageFor(model => model.MaTL, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col">
+            <div class="row">
+                <div class="col">
                     @Html.LabelFor(model => model.NgayTao, "Ngày tạo", htmlAttributes: new { @for = "inputNgayTao" })
                     <input type="datetime" value="@ViewBag.NgayTao" disabled readonly class="form-control" />                    
                     @Html.ValidationMessageFor(model => model.NgayTao, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group col">
+                <div class="col">
                     @Html.LabelFor(model => model.NgayChinhSua, "Ngày chỉnh sửa", htmlAttributes: new { @for = "inputNgayChinhSua" })
                     <input type="datetime" value="@ViewBag.NgayChinhSua" disabled readonly class="form-control" />                    
                     @Html.ValidationMessageFor(model => model.NgayChinhSua, "", new { @class = "text-danger" })
@@ -84,8 +84,8 @@
                 </script>
             </div>*@
             @Html.Partial("Create_Partial")      
-            <div class="form-row" style="margin-top: 15px;">
-                <div class="form-group col">
+            <div class="row" style="margin-top: 15px;">
+                <div class="col">
                     @Html.EditorFor(model => model.Anh, new { htmlAttributes = new { @class = "form-control", @placeholder = "Liên kết ảnh 1", @id = "inputAnh1" } })
                     @Html.ValidationMessageFor(model => model.Anh, "", new { @class = "text-danger" })
                 </div>
@@ -104,13 +104,13 @@
                     @Html.ValidationMessageFor(model => model.Anh4, "", new { @class = "text-danger" })
                 </div>
             </div>*@
-            <div class="form-row">
-                <div class="form-group col text-center">
+            <div class="row">
+                <div class="col text-center">
                     <div class="btn bg-primary text-white" onclick="changeImgs()" style="width: 100px;">Load</div>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col">
+            <div class="row">
+                <div class="col">
                     <img id="anh1" src="~/Images/photodefault.png" style="width:100%" />
                 </div>
                 @*<div class="form-group col">

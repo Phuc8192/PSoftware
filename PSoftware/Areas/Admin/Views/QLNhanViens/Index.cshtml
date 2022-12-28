@@ -1,0 +1,93 @@
+﻿@model List<PSoftware.Models.NhanVien>
+
+@{
+    ViewBag.Title = "Danh sách nhân viên";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "TenNV", rowsPerPage: 10);
+}
+
+<style>
+    .alternatingRowStyle {
+        background-color: #e3f2fd;
+    }
+
+    .grid-footer {
+        color: #000;
+        font: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .grid-footer --> a {
+        background-color: #ffffff;
+        color: #007bff;
+        padding: 8px;
+        text-decoration: none;       
+    }
+
+    .grid-footer --> a:active, a:hover {
+        background-color: #ffffff;
+        color: #FFAD33;
+    }
+
+    a {
+        text-decoration: none;
+        color: #695CFE;
+    }
+</style>
+<h3 style="text-align: center; padding:30px;">Danh Sách Nhân Viên</h3>
+<p class="m-3">
+    @Html.ActionLink("Thêm Nhân viên", "Create")
+</p>
+<div id="gridContent">
+    @grid.GetHtml(
+        tableStyle: "table table-bordered table-hover",
+        footerStyle: "grid-footer",
+        fillEmptyRows: true,
+        mode: WebGridPagerModes.Numeric,
+        alternatingRowStyle: "alternatingRowStyle",
+        columns: new[]  // colums in grid
+        {
+            grid.Column("HoNV", "Họ NV"),
+            grid.Column("TenNV","Tên NV"),
+            grid.Column("GioiTinh","Giới tính",format: (@item) => @item.GioiTinh==true?"Nam":"Nữ"),
+            grid.Column("SDT","Điện thoại"),
+            grid.Column("Email","Email"),
+            grid.Column("TenDN","Tên Đăng nhập"),
+            grid.Column("PhanQuyen","Phân quyền",format: (@item) => @item.PhanQuyen==true?"Quản lý":"Nhân viên"),
+            grid.Column("Chức năng", format: @<text>
+                <a href="@Url.Action("Edit",
+                                new { id = item.MaNV})" class="edit-btn m-2">
+                    <abbr title="Cập nhật dữ liệu"><i class="fa-solid fa-pen-to-square pr-2"></i></abbr>
+                </a>
+                <a href="@Url.Action("Details",
+                                new { id = item.MaNV})" class="edit-btn m-2">
+                    <abbr title="Xem chi tiết"><i class="fa-solid fa-eye pr-2"></i></abbr>
+                    
+                </a>
+                <a href="@Url.Action("Delete",
+                                new { id = item.MaNV})" class="edit-btn m-2">
+                    <abbr title="Xóa dữ liệu">
+                        <i class="fa-solid fa-trash pr-2"></i>
+                    </abbr>
+                </a>
+            </text>),
+
+            @*grid.Column(format: @<text>
+                <a href="@Url.Action("Edit", new { id = item.MaNV}) class="edit-btn">
+                    <abbr title="Cập nhật"><i class="fa-solid fa-pen-to-square pr-2"></i></abbr>                  
+                </a>
+            </text>),
+            grid.Column(format: @<text>
+                <a href="@Url.Action("Details", new { id = item.MaNV}) class="edit-btn">
+                    <abbr title="Xem chi tiết"><i class="fa-solid fa-eye pr-2"></i></abbr>
+                </a>
+            </text>),
+            grid.Column(format: @<text>
+                <a href="@Url.Action("Delete", new { id = item.MaNV}) class="edit-btn">
+                    <abbr title="Xóa"><i class="fa-solid fa-trash pr-2"></i></abbr>
+                </a>
+            </text>),*@            
+        }
+    )
+</div>

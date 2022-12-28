@@ -74,7 +74,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="@Url.Action("Index", "QLNhaPhatTriens")">
-                        <i class='bx bx-film'></i>
+                        <i class="fa-solid fa-code"></i>
                         <span class="link_name">NPT</span>
                     </a>
                     @*<i class='bx bxs-chevron-down arrow'></i>*@
@@ -84,45 +84,49 @@
                 </ul>
             </li>
             <li>
-                <a href="@Url.Action("Index", "QLLoaiSanPhams")">
-                    <i class='bx bxl-windows'></i>
-                    <span class="link_name">LSP</span>
-                </a>
+                <div class="iocn-link">
+                    <a href="@Url.Action("Index", "QLLoaiSanPhams")">
+                        <i class='bx bxl-windows'></i>
+                        <span class="link_name">LSP</span>
+                    </a>
+                </div>                
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLLoaiSanPhams")">LSP</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="@Url.Action("Index", "QLTheLoais")">
-                    <i class='bx bx-cart'></i>
-                    <span class="link_name">TL</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLTheLoais")">TL</a></li>
+                    <li><a class="link_name" href="@Url.Action("Index", "QLLoaiSanPhams")">Loại Sản Phẩm</a></li>
                 </ul>
             </li>
             <li>
                 <div class="iocn-link">
-                    <a href="#">
-                        <i class='bx bx-plug'></i>
-                        <span class="link_name">Plugins</span>
+                    <a href="@Url.Action("Index", "QLTheLoais")">
+                        <i class="fa-solid fa-tags"></i>
+                        <span class="link_name">TL</span>
                     </a>
-                    <i class='bx bxs-chevron-down arrow'></i>
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#">Plugins</a></li>
-                    <li><a href="#">UI Face</a></li>
-                    <li><a href="#">Pigments</a></li>
-                    <li><a href="#">Box Icons</a></li>
+                </div>               
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="@Url.Action("Index", "QLTheLoais")">Thể Loại</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <div class="iocn-link">
+                    <a href="@Url.Action("Index", "QLNhanViens")">
+                        <i class="fa-duotone fa-user-secret"></i>
+                        <span class="link_name">Nhân viên</span>
+                    </a>
+                    @*<i class='bx bxs-chevron-down arrow'></i>*@
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="@Url.Action("Index", "QLNhanViens")">Nhân viên</a></li>
+                    @*<li><a href="#">UI Face</a></li>
+                    <li><a href="#">Pigments</a></li>
+                    <li><a href="#">Box Icons</a></li>*@
+                </ul>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "QLKhachHangs")">
                     <i class='bx bx-compass'></i>
-                    <span class="link_name">Explore</span>
+                    <span class="link_name">Khách hàng</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Explore</a></li>
+                    <li><a class="link_name" href="@Url.Action("Index", "QLKhachHangs")">Khách hàng</a></li>
                 </ul>
             </li>
             <li>
@@ -173,7 +177,7 @@
     <section class="home-section">
         @RenderBody()
     </section>
-
+    <script src="https://kit.fontawesome.com/0fdbaedebb.js" crossorigin="anonymous"></script>
     <script src="~/Scripts/LayoutPage/LayoutPage.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

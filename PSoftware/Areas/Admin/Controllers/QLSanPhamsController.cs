@@ -23,6 +23,44 @@ namespace PSoftware.Areas.Admin.Controllers
             return View(sanPhams.ToList());
         }
 
+        [HttpGet]
+        public ActionResult IndexNC(Guid? maLSP, Guid? maNPT, Guid? maTL, string tenSP="", string giaMin="", string giaMax="")
+        {
+            string min = giaMin, max = giaMax;
+            ViewBag.tenSP = tenSP;
+
+            if (giaMin == "")
+            {
+                ViewBag.giaMin = "";
+                min = "0";
+            }
+            else
+            {
+                ViewBag.giaMin = giaMin;
+                min = giaMin;
+            }
+            if (max == "")
+            {
+                max = Int32.MaxValue.ToString();
+                ViewBag.giaMax = "";// Int32.MaxValue.ToString(); 
+            }
+            else
+            {
+                ViewBag.giaMax = giaMax;
+                max = giaMax;
+            }
+
+            ViewBag.maLSP = new SelectList(db.LoaiSanPhams, "MaLSP", "TenLSP");
+            ViewBag.maNPT = new SelectList(db.NhaPhatTriens, "MaNPT", "TenNPT");
+            ViewBag.maTL = new SelectList(db.TheLoais, "MaTL", "TenTL");
+
+            var sanPhams = db.SanPhams.AsEnumerable()
+                .Where(x=> x.TenSP == tenSP && (x.Gia >= double.Parse(min) && x.Gia <= double.Parse(max)) && x.MaLSP == maLSP && x.MaNPT == maNPT && x.MaTL == maTL);
+            if (sanPhams.Count() == 0)
+                ViewBag.TB = "Không có thông tin tìm kiếm.";
+            return View(sanPhams.ToList());
+        }
+
         // GET: Admin/QLSanPhams/Details/5
         public ActionResult Details(Guid? id)
         {
