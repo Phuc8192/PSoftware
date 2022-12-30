@@ -1,0 +1,28 @@
+﻿.alternatingRowStyle {
+        background-color: #e3f2fd;
+}
+
+.grid-footer {
+        color: #000;
+        font: 20px;
+        text-align: center;
+        font-weight: bold;
+
+}
+
+.grid-footer --> a {
+        background-color: #ffffff;
+        color: #007bff;
+        padding: 8px;
+        text-decoration: none;              
+}
+
+.grid-footer --> a:active, a:hover {
+        background-color: #ffffff;
+        color: #FFAD33;
+}
+
+a {
+    text-decoration: none;
+    color: #695CFE;    
+}           

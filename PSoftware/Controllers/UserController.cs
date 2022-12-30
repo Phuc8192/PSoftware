@@ -11,7 +11,7 @@ namespace PSoftware.Controllers
 {
     public class UserController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
         // GET: User       
 
         public ActionResult UserInfo(string id)

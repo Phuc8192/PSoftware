@@ -1,0 +1,69 @@
+﻿@model PSoftware.Models.CauHinhKhuyenNghi
+
+@{
+    ViewBag.Title = "Thêm cấu hình";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="container card" style="width: 55rem; padding: 30px; margin-top: 10px; margin-bottom: 10px;">
+            <h3 style="margin: 20px 0px; text-align: center">THÊM CẤU HÌNH</h3>
+            <hr />
+            <h5 style="margin-bottom: 10px">Thông tin cơ bản</h5>
+            <div class="row mb-4">
+                <div class="col">
+                    @Html.LabelFor(model => model.MaSP, "Tên sản phẩm", htmlAttributes: new { @for = "inputMaSP" })
+                    @Html.DropDownList("MaSP", null, htmlAttributes: new { @class = "form-control", @id = "inputMaSP" })
+                    @Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    @Html.LabelFor(model => model.CPU, "CPU", htmlAttributes: new { @for = "inputCPU" })
+                    @Html.EditorFor(model => model.CPU, new { htmlAttributes = new { @class = "form-control", @id = "inputCPU" } })
+                    @Html.ValidationMessageFor(model => model.CPU, "", new { @class = "text-danger" })
+                </div>
+                <div class="col">
+                    @Html.LabelFor(model => model.GPU, "Card đồ họa", htmlAttributes: new { @for = "inputGPU" })
+                    @Html.EditorFor(model => model.GPU, new { htmlAttributes = new { @class = "form-control", @id = "inputGPU" } })
+                    @Html.ValidationMessageFor(model => model.GPU, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    @Html.LabelFor(model => model.RAM, "Ram", htmlAttributes: new { @for = "inputRAM" })
+                    @Html.EditorFor(model => model.RAM, new { htmlAttributes = new { @class = "form-control", @id = "inputRAM" } })
+                    @Html.ValidationMessageFor(model => model.RAM, "", new { @class = "text-danger" })
+                </div>
+                <div class="col">
+                    @Html.LabelFor(model => model.Storage, "Bộ nhớ lưu trữ", htmlAttributes: new { @for = "inputStorage" })
+                    @Html.EditorFor(model => model.Storage, new { htmlAttributes = new { @class = "form-control", @id = "inputStorage" } })
+                    @Html.ValidationMessageFor(model => model.Storage, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    @Html.LabelFor(model => model.DirectX, "DirectX", htmlAttributes: new { @for = "inputDirectX" })
+                    @Html.EditorFor(model => model.DirectX, new { htmlAttributes = new { @class = "form-control", @id = "inputDirectX" } })
+                    @Html.ValidationMessageFor(model => model.DirectX, "", new { @class = "text-danger" })
+                </div>
+                <div class="col">
+                    @Html.LabelFor(model => model.OS, "Hệ điều hành", htmlAttributes: new { @for = "inputOS" })
+                    @Html.EditorFor(model => model.OS, new { htmlAttributes = new { @class = "form-control", @id = "inputOS" } })
+                    @Html.ValidationMessageFor(model => model.OS, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Thêm cấu hình" class="btn btn-primary text-white" style="width: 200px; margin-top: 20px;" />
+            </div>
+            <div class="form-group text-center">
+                @Html.ActionLink("Quay lại danh sách cấu hình", "Index")
+            </div>
+        </div>
+    </div>
+}

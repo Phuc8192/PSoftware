@@ -1,0 +1,22 @@
+﻿@model PSoftware.Models.CauHinhYeuCau
+
+@{
+    ViewBag.Title = "Xóa Cấu hình";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="m-3">
+    <h2 style="padding:30px 0px">XÓA CẤU HÌNH</h2>
+    <h3>Bạn có chắc muốn xóa cấu hình này?</h3>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Xóa" class="btn btn-default" /> |
+                @Html.ActionLink("Về lại danh sách", "Index")
+            </div>
+        }
+    </div>
+</div>

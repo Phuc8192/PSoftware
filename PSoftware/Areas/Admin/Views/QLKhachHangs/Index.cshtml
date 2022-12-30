@@ -5,8 +5,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
     var grid = new WebGrid(Model, canPage: true, defaultSort: "TenKH", rowsPerPage: 10);
 }
-
-<style>
+<link rel="stylesheet" href="~/Scripts/WebGrid/WebGrid.css" />
+@*<style>
     .alternatingRowStyle {
         background-color: #e3f2fd;
     }
@@ -34,7 +34,7 @@
         text-decoration: none;
         color: #695CFE;
     }
-</style>
+</style>*@
 <h3 style="text-align: center; padding:30px;">Danh Sách Khách Hàng</h3>
 <p class="m-3">
     @Html.ActionLink("Thêm Khách hàng", "Create")

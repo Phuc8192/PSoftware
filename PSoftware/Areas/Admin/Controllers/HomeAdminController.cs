@@ -9,7 +9,7 @@ namespace PSoftware.Areas.Admin.Controllers
 {
     public class HomeAdminController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
         // GET: Admin/HomeAdmin
         public ActionResult Index()
         {

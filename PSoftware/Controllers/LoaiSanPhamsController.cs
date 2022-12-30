@@ -12,7 +12,7 @@ namespace PSoftware.Controllers
 {
     public class LoaiSanPhamsController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
 
         // GET: LoaiSanPhams
         public ActionResult Index()

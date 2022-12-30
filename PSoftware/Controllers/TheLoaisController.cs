@@ -12,7 +12,7 @@ namespace PSoftware.Controllers
 {
     public class TheLoaisController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
 
         [ChildActionOnly]
         public PartialViewResult _ProductCategory()

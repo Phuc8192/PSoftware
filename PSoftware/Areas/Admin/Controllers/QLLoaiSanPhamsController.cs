@@ -12,7 +12,7 @@ namespace PSoftware.Areas.Admin.Controllers
 {
     public class QLLoaiSanPhamsController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
 
         // GET: Admin/QLLoaiSanPhams
         public ActionResult Index()

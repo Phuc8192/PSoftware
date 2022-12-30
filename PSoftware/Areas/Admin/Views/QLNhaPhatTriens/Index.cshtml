@@ -5,8 +5,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
     var grid = new WebGrid(Model, canPage: true, defaultSort: "MaNPT", rowsPerPage: 10);
 }
-
-<style>
+<link rel="stylesheet" href="~/Scripts/WebGrid/WebGrid.css" />
+@*<style>
     .alternatingRowStyle {
         background-color: #e3f2fd;
     }
@@ -28,7 +28,7 @@
                 background-color: #ffffff;
                 color: #FFAD33;
             }
-</style>
+</style>*@
 <h3 style="text-align: center; padding:30px;">Danh Sách Nhà Phát Triển</h3>
 <p>
     @Html.ActionLink("Thêm nhà phát triển", "Create")

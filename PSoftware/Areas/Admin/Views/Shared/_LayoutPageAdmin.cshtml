@@ -108,7 +108,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="@Url.Action("Index", "QLNhanViens")">
-                        <i class="fa-duotone fa-user-secret"></i>
+                        <i class="fa-solid fa-user-secret"></i>
                         <span class="link_name">Nhân viên</span>
                     </a>
                     @*<i class='bx bxs-chevron-down arrow'></i>*@
@@ -122,20 +122,25 @@
             </li>
             <li>
                 <a href="@Url.Action("Index", "QLKhachHangs")">
-                    <i class='bx bx-compass'></i>
+                    <i class="fa-solid fa-user"></i>
                     <span class="link_name">Khách hàng</span>
                 </a>
-                <ul class="sub-menu blank">
+                <ul class="sub-menu">
                     <li><a class="link_name" href="@Url.Action("Index", "QLKhachHangs")">Khách hàng</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">
-                    <i class='bx bx-history'></i>
-                    <span class="link_name">History</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">History</a></li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class="fa-solid fa-computer"></i>
+                        <span class="link_name">Cấu hình</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>               
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Cấu hình</a></li>
+                    <li><a href="@Url.Action("Index", "QLCauHinhYeuCaus")">Cấu hình yêu cầu</a></li>
+                    <li><a href="@Url.Action("Index", "QLCauHinhKhuyenNghis")">Cấu hình khuyến nghị</a></li>
                 </ul>
             </li>
             <li>

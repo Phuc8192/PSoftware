@@ -12,7 +12,7 @@ namespace PSoftware.Areas.Admin.Controllers
 {
     public class QLNhaPhatTriensController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
 
         // GET: Admin/QLNhaPhatTriens
         public ActionResult Index()

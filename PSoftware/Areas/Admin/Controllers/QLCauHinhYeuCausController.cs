@@ -10,109 +10,113 @@ using PSoftware.Models;
 
 namespace PSoftware.Areas.Admin.Controllers
 {
-    public class QLNhanViensController : Controller
+    public class QLCauHinhYeuCausController : Controller
     {
         private PSoftwareDB db = new PSoftwareDB();
 
-        // GET: Admin/QLNhanViens
+        // GET: Admin/QLCauHinhYeuCaus
         public ActionResult Index()
         {
-            return View(db.NhanViens.ToList());
+            var cauHinhYeuCaus = db.CauHinhYeuCaus.Include(c => c.SanPham);
+            return View(cauHinhYeuCaus.ToList());
         }
 
-        // GET: Admin/QLNhanViens/Details/5
+        // GET: Admin/QLCauHinhYeuCaus/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            if (nhanVien == null)
+            CauHinhYeuCau cauHinhYeuCau = db.CauHinhYeuCaus.Find(id);
+            if (cauHinhYeuCau == null)
             {
                 return HttpNotFound();
             }
-            return View(nhanVien);
+            return View(cauHinhYeuCau);
         }
 
-        // GET: Admin/QLNhanViens/Create
+        // GET: Admin/QLCauHinhYeuCaus/Create
         public ActionResult Create()
         {
+            ViewBag.MaSP = new SelectList(db.SanPhams, "MaSP", "TenSP");
             return View();
         }
 
-        // POST: Admin/QLNhanViens/Create
+        // POST: Admin/QLCauHinhYeuCaus/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,SDT,Email,DiaChi,TenDN,MatKhau,PhanQuyen,Anh")] NhanVien nhanVien)
+        public ActionResult Create([Bind(Include = "MaCHYC,CPU,RAM,GPU,Storage,OS,DirectX,MaSP")] CauHinhYeuCau cauHinhYeuCau)
         {
             if (ModelState.IsValid)
             {
-                nhanVien.MaNV = Guid.NewGuid();
-                nhanVien.MatKhau = Encryptor.MD5Hash(nhanVien.MatKhau);
-                db.NhanViens.Add(nhanVien);
+                cauHinhYeuCau.MaCHYC = Guid.NewGuid();
+                db.CauHinhYeuCaus.Add(cauHinhYeuCau);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(nhanVien);
+            ViewBag.MaSP = new SelectList(db.SanPhams, "MaSP", "TenSP", cauHinhYeuCau.MaSP);
+            return View(cauHinhYeuCau);
         }
 
-        // GET: Admin/QLNhanViens/Edit/5
+        // GET: Admin/QLCauHinhYeuCaus/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            if (nhanVien == null)
+            CauHinhYeuCau cauHinhYeuCau = db.CauHinhYeuCaus.Find(id);
+            if (cauHinhYeuCau == null)
             {
                 return HttpNotFound();
             }
-            return View(nhanVien);
+            ViewBag.MaSP = new SelectList(db.SanPhams, "MaSP", "TenSP", cauHinhYeuCau.MaSP);
+            return View(cauHinhYeuCau);
         }
 
-        // POST: Admin/QLNhanViens/Edit/5
+        // POST: Admin/QLCauHinhYeuCaus/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaNV,HoNV,TenNV,GioiTinh,NgaySinh,SDT,Email,DiaChi,TenDN,MatKhau,PhanQuyen,Anh")] NhanVien nhanVien)
+        public ActionResult Edit([Bind(Include = "MaCHYC,CPU,RAM,GPU,Storage,OS,DirectX,MaSP")] CauHinhYeuCau cauHinhYeuCau)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nhanVien).State = EntityState.Modified;
+                db.Entry(cauHinhYeuCau).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(nhanVien);
+            ViewBag.MaSP = new SelectList(db.SanPhams, "MaSP", "TenSP", cauHinhYeuCau.MaSP);
+            return View(cauHinhYeuCau);
         }
 
-        // GET: Admin/QLNhanViens/Delete/5
+        // GET: Admin/QLCauHinhYeuCaus/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            if (nhanVien == null)
+            CauHinhYeuCau cauHinhYeuCau = db.CauHinhYeuCaus.Find(id);
+            if (cauHinhYeuCau == null)
             {
                 return HttpNotFound();
             }
-            return View(nhanVien);
+            return View(cauHinhYeuCau);
         }
 
-        // POST: Admin/QLNhanViens/Delete/5
+        // POST: Admin/QLCauHinhYeuCaus/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            db.NhanViens.Remove(nhanVien);
+            CauHinhYeuCau cauHinhYeuCau = db.CauHinhYeuCaus.Find(id);
+            db.CauHinhYeuCaus.Remove(cauHinhYeuCau);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

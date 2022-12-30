@@ -174,6 +174,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLCauHinhKhuyenNghisController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLCauHinhYeuCausController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLKhachHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLLoaiSanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLNhanViensController.cs" />
@@ -194,67 +196,27 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\BinhLuan.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\BinhLuan.cs" />
     <Compile Include="Models\CartItem.cs" />
-    <Compile Include="Models\CauHinhKhuyenNghi.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CauHinhYeuCau.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CDKey.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ChiTietHoaDon.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\CauHinhKhuyenNghi.cs" />
+    <Compile Include="Models\CauHinhYeuCau.cs" />
+    <Compile Include="Models\CDKey.cs" />
+    <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\CKEditor.cs" />
     <Compile Include="Models\Encryptor.cs" />
-    <Compile Include="Models\HoaDon.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\HoaDon.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LoaiSanPham.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\LoaiSanPham.cs" />
     <Compile Include="Models\LoginModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\NhanVien.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NhaPhatTrien.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PSoftware.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PSoftware.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PSoftware.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PSoftware.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PSoftware.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\NhaPhatTrien.cs" />
+    <Compile Include="Models\PSoftwareDB.cs" />
     <Compile Include="Models\RegisterModels.cs" />
-    <Compile Include="Models\SanPham.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TheLoai.cs">
-      <DependentUpon>PSoftware.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\SanPham.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\TheLoai.cs" />
     <Compile Include="MoMo\MoMoSercurity.cs" />
     <Compile Include="MoMo\PaymentRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1165,16 +1127,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\PSoftware.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PSoftware.edmx</DependentUpon>
-      <LastGenOutput>PSoftware.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\PSoftware.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PSoftware.edmx</DependentUpon>
-      <LastGenOutput>PSoftware.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -1200,13 +1152,6 @@
     <Content Include="Areas\Admin\Views\QLNhaPhatTriens\Index.cshtml" />
     <Content Include="assets\plugins\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="assets\plugins\ckfinder\userfiles\.htaccess" />
-    <EntityDeploy Include="Models\PSoftware.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PSoftware.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\PSoftware.edmx.diagram">
-      <DependentUpon>PSoftware.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\Shared\_LayoutPageAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\QLKhachHangs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\QLKhachHangs\Delete.cshtml" />
@@ -1237,6 +1182,16 @@
     <Content Include="Areas\Admin\Views\QLNhanViens\Details.cshtml" />
     <Content Include="Areas\Admin\Views\QLNhanViens\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\QLNhanViens\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhYeuCaus\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhYeuCaus\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhYeuCaus\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhYeuCaus\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhYeuCaus\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1252,6 +1207,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\TheLoai\Details.css" />
+    <Content Include="Scripts\WebGrid\WebGrid.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

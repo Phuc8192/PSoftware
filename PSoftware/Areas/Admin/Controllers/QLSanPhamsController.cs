@@ -14,7 +14,7 @@ namespace PSoftware.Areas.Admin.Controllers
 {
     public class QLSanPhamsController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
 
         // GET: Admin/QLSanPhams
         public ActionResult Index()
@@ -24,7 +24,7 @@ namespace PSoftware.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public ActionResult IndexNC(Guid? maLSP, Guid? maNPT, Guid? maTL, string tenSP="", string giaMin="", string giaMax="")
+        public ActionResult IndexNC(Guid? maLSP, Guid? maNPT, Guid? maTL, string tenSP = "", string giaMin = "", string giaMax = "")
         {
             string min = giaMin, max = giaMax;
             ViewBag.tenSP = tenSP;
@@ -55,7 +55,7 @@ namespace PSoftware.Areas.Admin.Controllers
             ViewBag.maTL = new SelectList(db.TheLoais, "MaTL", "TenTL");
 
             var sanPhams = db.SanPhams.AsEnumerable()
-                .Where(x=> x.TenSP == tenSP && (x.Gia >= double.Parse(min) && x.Gia <= double.Parse(max)) && x.MaLSP == maLSP && x.MaNPT == maNPT && x.MaTL == maTL);
+                .Where(x => x.TenSP == tenSP && (x.Gia >= double.Parse(min) && x.Gia <= double.Parse(max)) && x.MaLSP == maLSP && x.MaNPT == maNPT && x.MaTL == maTL);
             if (sanPhams.Count() == 0)
                 ViewBag.TB = "Không có thông tin tìm kiếm.";
             return View(sanPhams.ToList());
@@ -194,7 +194,7 @@ namespace PSoftware.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 sanPham.NgayChinhSua = System.DateTime.Now;
-                db.Entry(sanPham).State = EntityState.Modified;               
+                db.Entry(sanPham).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

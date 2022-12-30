@@ -5,8 +5,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
     var grid = new WebGrid(Model, canPage: true, defaultSort: "TenSP", rowsPerPage: 10);
 }
-
-<style>
+<link rel="stylesheet" href="~/Scripts/WebGrid/WebGrid.css" />
+@*<style>
     .alternatingRowStyle {
         background-color: #e3f2fd;
     }
@@ -28,7 +28,7 @@
                 background-color: #ffffff;
                 color: #FFAD33;
             }
-</style>
+</style>*@
 <h3 style="text-align: center; padding:30px;">Danh Sách Sản Phẩm</h3>
 <p>
     @Html.ActionLink("Thêm sản phẩm", "Create")
@@ -42,6 +42,7 @@
         alternatingRowStyle: "alternatingRowStyle",
         columns: new[]  // colums in grid
         {
+            grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
             /*grid.Column("MaSP","Mã SP"),*/ //the model fields to display
             grid.Column("TenSP","Tên SP"  ),
             grid.Column("Gia","Giá",format:@<text> @item.Gia.ToString("#,##0")</text>),

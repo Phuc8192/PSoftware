@@ -12,7 +12,7 @@ namespace PSoftware.Controllers
 {
     public class SanPhamsController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
 
         // GET: SanPhams
         public ActionResult Index()
@@ -22,7 +22,7 @@ namespace PSoftware.Controllers
         }
 
         public ActionResult TimKiem()
-        {           
+        {
             var sanPham = db.SanPhams.Include(s => s.LoaiSanPham).Include(s => s.NhaPhatTrien).Include(s => s.TheLoai);
             return View(sanPham.ToList());
         }

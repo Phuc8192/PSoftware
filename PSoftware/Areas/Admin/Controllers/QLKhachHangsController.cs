@@ -12,7 +12,7 @@ namespace PSoftware.Areas.Admin.Controllers
 {
     public class QLKhachHangsController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
 
         // GET: Admin/QLKhachHangs
         public ActionResult Index()
@@ -83,7 +83,7 @@ namespace PSoftware.Areas.Admin.Controllers
         public ActionResult Edit([Bind(Include = "MaKH,HoKH,TenKH,GioiTinh,NgaySinh,SDT,Email,DiaChi,TenDN,MatKhau,Anh")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
-            {              
+            {
                 db.Entry(khachHang).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

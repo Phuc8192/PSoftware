@@ -1,0 +1,82 @@
+﻿@model PSoftware.Models.CauHinhKhuyenNghi
+
+@{
+    ViewBag.Title = "Chi tiết cấu hình";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<style>
+    .gradient-custom {
+        /* fallback for old browsers */
+        background: #f6d365;
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+    }
+
+    a {
+        color: #ffffff;
+    }
+</style>
+
+<section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-8 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <div class="row g-0">
+                        <div class="col-md-4 gradient-custom text-center text-white"
+                             style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                            <img src="@Model.SanPham.Anh"
+                                 alt="Avatar" class="img-fluid my-5" style="width: 280px;" />
+                            <h5>@Html.DisplayFor(model => model.SanPham.TenSP)</h5>
+                            <a title="Quay lại danh sách" class="text-decoration-none m-2" href="@Url.Action("Index", "QLCauHinhKhuyenNghis")">
+                                <i class="fa-solid fa-list"></i>
+                            </a>
+                            <a title="Chỉnh sửa" class="text-decoration-none m-2" href="@Url.Action("Edit", "QLCauHinhKhuyenNghis", new { id = Model.MaCHKN})">
+                                <i class="fa-solid fa-pen-to-square pr-2"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-4">
+                                <h6>Thông tin</h6>
+                                <hr class="mt-0 mb-4">
+                                <div class="row pt-1">
+                                    <div class="col-6 mb-3">
+                                        <h6>CPU</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.CPU)</p>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <h6>Card đồ họa</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.GPU)</p>
+                                    </div>
+                                </div>
+                                <div class="row pt-1">
+                                    <div class="col-6 mb-3">
+                                        <h6>Ram</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.RAM)</p>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <h6>Bộ nhớ lưu trữ</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.Storage)</p>
+                                    </div>
+                                </div>
+                                <div class="row pt-1">
+                                    <div class="col-6 mb-3">
+                                        <h6>DirectX</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.DirectX)</p>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <h6>OS</h6>
+                                        <p class="text-muted">@Html.DisplayFor(model => model.OS)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

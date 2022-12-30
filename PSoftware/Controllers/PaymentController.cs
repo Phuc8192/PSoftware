@@ -11,7 +11,7 @@ namespace PSoftware.Controllers
 {
     public class PaymentController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
         // GET: Payment
         public ActionResult PaymentWithMomo()
         {

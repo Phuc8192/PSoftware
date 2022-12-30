@@ -9,7 +9,7 @@ namespace PSoftware.Controllers
 {
     public class HomeController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
         public ActionResult Index()
         {
             //var sANPHAMs = db.SanPhams.OrderByDescending(s => s.NgayTao);

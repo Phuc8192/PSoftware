@@ -10,14 +10,14 @@ namespace PSoftware.Controllers
 {
     public class CartController : Controller
     {
-        private PSoftwareEntities1 db = new PSoftwareEntities1();
+        private PSoftwareDB db = new PSoftwareDB();
         // GET: Cart
         public ActionResult Index()
         {
             List<CartItem> cart = Session["cart"] as List<CartItem>;
             return View(cart);
         }
-        
+
         public RedirectToRouteResult ThemVaoGio(Guid MaSP)
         {
 

@@ -5,8 +5,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
     var grid = new WebGrid(Model, canPage: true, defaultSort: "MaLSP", rowsPerPage: 10);
 }
-
-<style>
+<link rel="stylesheet" href="~/Scripts/WebGrid/WebGrid.css" />
+@*<style>
     .alternatingRowStyle {
         background-color: #e3f2fd;
     }
@@ -27,7 +27,7 @@
             .grid-footer --> a:active, a:hover {
                 background-color: #ffffff;
                 color: #FFAD33;
-            }
+            }*@
 </style>
 <h3 style="text-align: center; padding:30px;">Danh Sách Loại Sản Phẩm</h3>
 <p>
