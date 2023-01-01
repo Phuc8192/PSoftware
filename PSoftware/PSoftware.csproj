@@ -184,6 +184,8 @@
     <Compile Include="Areas\Admin\Controllers\QLTheLoaisController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CauHinhKhuyenNghisController.cs" />
+    <Compile Include="Controllers\CauHinhYeuCausController.cs" />
     <Compile Include="Controllers\CKEditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSanPhamsController.cs" />
@@ -1253,6 +1255,8 @@
     <Content Include="Views\LoaiSanPhams\IndexGame.cshtml" />
     <Content Include="Views\LoaiSanPhams\IndexSoftware.cshtml" />
     <Content Include="Views\SanPhams\Details.cshtml" />
+    <Content Include="Views\CauHinhYeuCaus\Details.cshtml" />
+    <Content Include="Views\CauHinhKhuyenNghis\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

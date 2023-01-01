@@ -64,5 +64,10 @@
             </div>
         </div>
     </div>
+    <hr />
+    <div class="row">
+        @{ Html.RenderAction("Details", "CauHinhYeuCaus", new { id = Model.MaSP}); }
+        @{ Html.RenderAction("Details", "CauHinhKhuyenNghis", new { id = Model.MaSP }); }
+    </div>
 </div>
 
