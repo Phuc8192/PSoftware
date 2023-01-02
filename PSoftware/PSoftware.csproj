@@ -1195,6 +1195,7 @@
     <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Cart\Cart.css" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1257,6 +1258,7 @@
     <Content Include="Views\SanPhams\Details.cshtml" />
     <Content Include="Views\CauHinhYeuCaus\Details.cshtml" />
     <Content Include="Views\CauHinhKhuyenNghis\Details.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1269,7 +1271,6 @@
     <Folder Include="assets\plugins\ckfinder\plugins\watermark\bin\Debug\" />
     <Folder Include="assets\plugins\ckfinder\plugins\watermark\bin\Release\" />
     <Folder Include="Data\" />
-    <Folder Include="Views\Cart\" />
     <Folder Include="Views\CKEditor\" />
     <Folder Include="Views\Payment\" />
   </ItemGroup>

@@ -46,7 +46,7 @@ namespace PSoftware.Controllers
                 Session["SL"] = cardItem.SLuong;
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Cart");
         }
 
         public RedirectToRouteResult SuaSoLuong(Guid MaSP, int SLuongMoi)
