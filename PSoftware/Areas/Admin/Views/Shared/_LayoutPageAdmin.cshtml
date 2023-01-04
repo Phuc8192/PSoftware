@@ -144,12 +144,12 @@
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="@Url.Action("Index", "QLHoaDons")">
                     <i class='bx bx-cog'></i>
-                    <span class="link_name">Setting</span>
+                    <span class="link_name">Hóa Đơn</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Setting</a></li>
+                    <li><a class="link_name" href="@Url.Action("Index", "QLHoaDons")">Hóa Đơn</a></li>
                 </ul>
             </li>
             <li>
@@ -158,20 +158,20 @@
                         <i class='bx bxs-user-account'></i>
                         <!-- <img src="image/profile.jpg" alt="profileImg"> -->
                     </div>
-                    @if (Session["TenDN"] != null)
+                    @if (Session["TenDNNV"] != null)
                     {
                         <div class="name-job">
-                            <div class="profile_name">@Session["TenDN"].ToString()</div>
+                            <div class="profile_name">@Session["TenDNNV"].ToString()</div>
                             @*<div class="job">Web Desginer</div>*@
                         </div>
-                        <i class='bx bx-log-out'>@Html.ActionLink("", "Logoff", "User")</i>
+                        <a href="@Url.Action("Logoff", "HomeAdmin")"><i class='bx bx-log-out'></i></a>
                     }
                     else
                     {
                         <div class="name-job">
-                            <div class="profile_name">@Html.ActionLink("Đăng nhập", "Login", "User")</div>
+                            <div class="profile_name">@Html.ActionLink("Đăng nhập", "Login", "HomeAdmin")</div>
                             @*Đăng nhập*@
-                            <div class="job">Khách hàng</div>
+                            <div class="job">Quản Trị</div>
                         </div>
                         <i></i>
                     }

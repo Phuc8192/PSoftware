@@ -146,12 +146,12 @@
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="@Url.Action("Index", "HoaDons", new { id = Session["MaKH"]})">
                     <i class='bx bx-history'></i>
                     <span class="link_name">History</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">History</a></li>
+                    <li><a class="link_name" href="@Url.Action("Index", "HoaDons", new { id = Session["MaKH"]})">History</a></li>
                 </ul>
             </li>
             <li>

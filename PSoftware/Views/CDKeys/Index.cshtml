@@ -1,0 +1,34 @@
+﻿@model IEnumerable<PSoftware.Models.CDKey>
+
+@{
+    ViewBag.Title = "CDKey";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="row mt-5">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Mã Hóa đơn</td>
+                    <th>Hình</th>
+                    <th>Tên sản phẩm</th>
+                    <th>CD-Key</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MaHD</td>
+                        <td><img src="@item.SanPham.Anh" width="100" height="60" /> </td>
+                        <td><a target="_blank" href="@Url.Action("Details", "SanPhams", new { id = @item.MaSP })"> @item.SanPham.TenSP </a> </td>
+                        <td>
+                            @item.CDKey1
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+<a style="padding: 30px 0px" href="@Url.Action("Index","HoaDons", new { id = Session["MaKH"]})">Về danh sách</a>
+

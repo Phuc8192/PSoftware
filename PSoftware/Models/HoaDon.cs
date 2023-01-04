@@ -25,8 +25,6 @@ namespace PSoftware.Models
 
         public Guid MaKH { get; set; }
 
-        public Guid MaNV { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CDKey> CDKeys { get; set; }
 
@@ -34,7 +32,5 @@ namespace PSoftware.Models
         public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
 
         public virtual KhachHang KhachHang { get; set; }
-
-        public virtual NhanVien NhanVien { get; set; }
     }
 }

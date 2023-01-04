@@ -52,6 +52,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -176,6 +184,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLCauHinhKhuyenNghisController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLCauHinhYeuCausController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLHoaDonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLKhachHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLLoaiSanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLNhanViensController.cs" />
@@ -186,7 +195,10 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CauHinhKhuyenNghisController.cs" />
     <Compile Include="Controllers\CauHinhYeuCausController.cs" />
+    <Compile Include="Controllers\CDKeysController.cs" />
+    <Compile Include="Controllers\ChiTietHoaDonsController.cs" />
     <Compile Include="Controllers\CKEditorController.cs" />
+    <Compile Include="Controllers\HoaDonsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSanPhamsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -1125,6 +1137,7 @@
     <Content Include="assets\plugins\ckfinder\_samples\standalone_v1.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1194,6 +1207,13 @@
     <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Details.cshtml" />
     <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\QLCauHinhKhuyenNghis\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QLHoaDons\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QLHoaDons\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QLHoaDons\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\QLHoaDons\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QLHoaDons\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Cart\Cart.css" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1259,11 +1279,16 @@
     <Content Include="Views\CauHinhYeuCaus\Details.cshtml" />
     <Content Include="Views\CauHinhKhuyenNghis\Details.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Payment\ReturnUrl.cshtml" />
+    <Content Include="Views\Cart\Message.cshtml" />
+    <Content Include="Views\HoaDons\Details.cshtml" />
+    <Content Include="Views\HoaDons\Index.cshtml" />
+    <Content Include="Views\ChiTietHoaDons\Index.cshtml" />
+    <Content Include="Views\CDKeys\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\HomeAdmin\" />
     <Folder Include="assets\plugins\ckfinder\plugins\fileeditor\bin\Debug\" />
     <Folder Include="assets\plugins\ckfinder\plugins\fileeditor\bin\Release\" />
     <Folder Include="assets\plugins\ckfinder\plugins\imageresize\bin\Debug\" />
@@ -1272,7 +1297,6 @@
     <Folder Include="assets\plugins\ckfinder\plugins\watermark\bin\Release\" />
     <Folder Include="Data\" />
     <Folder Include="Views\CKEditor\" />
-    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
