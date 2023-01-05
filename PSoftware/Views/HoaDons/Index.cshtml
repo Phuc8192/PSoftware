@@ -40,17 +40,17 @@
             @if (item.TrangThai == true)
             {
                 Tthai = "Đã duyệt";
-                <td class="btn btn-success">@Tthai</td>
-                <td><a href="@Url.Action("Index","CDKeys",new { id = item.MaHD})">Xem</a></td>
+                <td><button type="button" class="btn btn-success">@Tthai</button></td>
+                <td><a class="text-decoration-none" href="@Url.Action("Index","CDKeys",new { id = item.MaHD})">Xem</a></td>
             }
             else
             {
                 Tthai = "Chưa duyệt";
-                <td class="btn btn-danger">@Tthai</td>
+                <td><button type="button" class="btn btn-danger">@Tthai</button></td>
                 <td></td>
             }
             <td>
-                <a href="@Url.Action("Index","ChiTietHoaDons",new { id = item.MaHD})">Xem</a>
+                <a class="text-decoration-none" href="@Url.Action("Index","ChiTietHoaDons",new { id = item.MaHD})">Xem</a>
             </td>
         </tr>
     }

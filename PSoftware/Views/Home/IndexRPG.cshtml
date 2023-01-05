@@ -1,0 +1,35 @@
+﻿@model IEnumerable<PSoftware.Models.SanPham>
+
+<style type="text/css">
+    .backgroundRPG {
+        background-image: url('https://images.alphacoders.com/743/thumb-1920-74381.JPG');
+        padding: 50px;
+    }
+
+    .transbox {
+        font-size: 25px;
+        text-align: center;
+        padding: 20px;
+    }
+</style>
+
+<div class="backgroundRPG">
+    <div class="container transbox">
+        <div class="row pt-4">
+            <h4 class="badge bg-warning text-dark">Game RPG</h4>
+            <div class="product-group">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="card card-product mb-3">
+                                <img class="card-img-top" src="@item.Anh" alt="Card image cap">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

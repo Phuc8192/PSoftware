@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PSoftware.Models.SanPham>
+
+<style type="text/css">
+    .backgroundAC{
+      background-image:url('https://wallpaperaccess.com/full/2972477.jpg');
+      padding:50px;
+    }
+    .transbox{
+      font-size:25px;
+      text-align:center;
+      padding:20px;
+      /*background-color:#ddd;*/
+      /*opacity:0.7;*/
+    }
+</style>
+
+<div class="backgroundAC">
+    <div class="container transbox">
+        <div class="row pt-4">
+            <h4 class="badge bg-warning text-dark">Game Hành Động Kịch Tính</h4>
+            <div class="product-group">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="card card-product mb-3">
+                                <img class="card-img-top" src="@item.Anh" alt="Card image cap">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+                
+

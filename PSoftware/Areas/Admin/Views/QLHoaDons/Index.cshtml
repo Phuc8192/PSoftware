@@ -37,12 +37,12 @@
             @if (item.TrangThai == true)
             {
                 Tthai = "Đã duyệt";
-                <td class="btn btn-success">@Tthai</td>
+                <td><button type="button" class="btn btn-success">@Tthai</button></td>
             }
             else
             {
                 Tthai = "Chưa duyệt";
-                <td class="btn btn-danger">@Tthai</td>
+                <td><button type="button" class="btn btn-danger">@Tthai</button></td>
             }
             <td>
                 @Html.DisplayFor(modelItem => item.KhachHang.TenKH)

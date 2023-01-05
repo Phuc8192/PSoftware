@@ -1,0 +1,9 @@
+﻿@model IEnumerable<PSoftware.Models.SanPham>
+@foreach (var item in Model.Take(2))
+{
+    <div class="col-md-12 col-sm-6 col-12" style="height:50%">
+        <div class="card card-product">
+            <img class="card-img-top" src="@item.Anh" alt="Card image cap">
+        </div>
+    </div>
+}

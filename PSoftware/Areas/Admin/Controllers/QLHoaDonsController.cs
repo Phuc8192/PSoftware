@@ -19,7 +19,7 @@ namespace PSoftware.Areas.Admin.Controllers
         public ActionResult Index(int? page)
         {
             if (page == null) page = 1;
-            var links = (from l in db.HoaDons select l).OrderByDescending(s => s.MaHD);
+            var links = (from l in db.HoaDons select l).OrderByDescending(s => s.NgayBan);
 
             int pageSize = 10;
             int pageNumber = (page ?? 1);
@@ -42,16 +42,8 @@ namespace PSoftware.Areas.Admin.Controllers
         // GET: Admin/QLHoaDons/Details/5
         public ActionResult Details(Guid? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            HoaDon hoaDon = db.HoaDons.Find(id);
-            if (hoaDon == null)
-            {
-                return HttpNotFound();
-            }
-            return View(hoaDon);
+            List<ChiTietHoaDon> _cthd = db.ChiTietHoaDons.Where(x => x.MaHD == id).ToList();
+            return View(_cthd);
         }
 
         // GET: Admin/QLHoaDons/Create
