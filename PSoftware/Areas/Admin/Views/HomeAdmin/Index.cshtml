@@ -1,8 +1,147 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Trang chủ";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<style type="text/css">
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<div class="container">  
+    <div class="row pt-5">
+        <h2 style="text-align:center;">TỔNG QUAN</h2>
+        <div class="product-group">
+            <div class="row pt-5">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body"><h2>@ViewBag.hoaDon</h2></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            @if (Session["TenDNNV"] != null)
+                            {
+                                <a class="small text-white stretched-link" href="@Url.Action("Index","QLHoaDons")"><h4>Hóa Đơn</h4></a>
+                            }
+                            else
+                            {
+                                <a class="small text-white stretched-link" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');"><h4>Hóa Đơn</h4></a>
+                            }
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>               
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body"><h2>@ViewBag.doanhThu.ToString("#,##0").Replace(',', '.') VND</h2></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="#"><h4>Doanh Thu</h4></a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body"><h2>@ViewBag.khachHang</h2></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            @if (Session["TenDNNV"] != null)
+                            {
+                                <a class="small text-white stretched-link" href="@Url.Action("Index","QLKhachHangs")"><h4>Khách Hàng</h4></a>
+                            }
+                            else
+                            {
+                                <a class="small text-white stretched-link" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');"><h4>Khách Hàng</h4></a>
+                            }
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-info text-dark mb-4">
+                        <div class="card-body"><h2>@ViewBag.nhanVien</h2></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            @if (Session["TenDNNV"] != null)
+                            {
+                                <a class="small text-dark stretched-link" href="@Url.Action("Index","QLNhanViens")"><h4>Nhân Viên</h4></a>
+                            }
+                            else
+                            {
+                                <a class="small text-dark stretched-link" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');"><h4>Nhân Viên</h4></a>
+                            }
+                            <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-warning text-dark mb-4">
+                        <div class="card-body"><h2>@ViewBag.sanPham</h2></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            @if (Session["TenDNNV"] != null)
+                            {
+                                <a class="small text-dark stretched-link" href="@Url.Action("Index","QLSanPhams")"><h4>Sản Phẩm</h4></a>
+                            }
+                            else
+                            {
+                                <a class="small text-dark stretched-link" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');"><h4>Sản Phẩm</h4></a>
+                            }
+                            <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-dark text-white mb-4">
+                        <div class="card-body"><h2>@ViewBag.NPT</h2></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            @if (Session["TenDNNV"] != null)
+                            {
+                                <a class="small text-white stretched-link" href="@Url.Action("Index","QLNhaPhatTriens")"><h4>Nhà Phát Triển</h4></a>
+                            }
+                            else
+                            {
+                                <a class="small text-white stretched-link" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');"><h4>Nhà Phát Triển</h4></a>
+                            }
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-light text-dark mb-4">
+                        <div class="card-body"><h2>@ViewBag.theLoai</h2></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            @if (Session["TenDNNV"] != null)
+                            {
+                                <a class="small text-dark stretched-link" href="@Url.Action("Index","QLTheLoais")"><h4>Thể Loại</h4></a>
+                            }
+                            else
+                            {
+                                <a class="small text-dark stretched-link" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');"><h4>Thể Loại</h4></a>
+                            }
+                            <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-secondary text-white mb-4">
+                        <div class="card-body"><h2>@ViewBag.LSP</h2></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            @if (Session["TenDNNV"] != null)
+                            {
+                                <a class="small text-white stretched-link" href="@Url.Action("Index","QLLoaiSanPhams")"><h4>Loại Sản Phẩm</h4></a>
+                            }
+                            else
+                            {
+                                <a class="small text-white stretched-link" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');"><h4>Loại Sản Phẩm</h4></a>
+                            }
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+
+
 

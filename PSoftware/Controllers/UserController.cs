@@ -14,7 +14,7 @@ namespace PSoftware.Controllers
         private PSoftwareDB db = new PSoftwareDB();
         // GET: User       
 
-        public ActionResult UserInfo(string id)
+        public ActionResult UserInfo(Guid id)
         {
             //return View();
             if (id == null)

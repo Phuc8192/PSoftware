@@ -1290,6 +1290,7 @@
     <Content Include="Views\Home\IndexRPG.cshtml" />
     <Content Include="Views\Home\IndexSoftware.cshtml" />
     <Content Include="Views\Home\IndexRight.cshtml" />
+    <Content Include="Views\User\UserInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1332,7 +1333,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1080</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:11000/</IISUrl>
+          <IISUrl>https://localhost:44400/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

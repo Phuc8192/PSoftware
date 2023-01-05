@@ -23,157 +23,125 @@
                 <span class="logo_name">PSoftware</span>
             </div>
         </header>
-
-        <!-- <header>
-          <div class="image-text">
-              <i class='bx bxl-c-plus-plus'></i>
-
-              <div class="text logo-text">
-                  <span class="name">Codinglab</span>
-                  <span class="profession">Web developer</span>
-              </div>
-          </div>
-
-          <i class='bx bx-chevron-right toggle'></i>
-        </header> -->
-
         <ul class="nav-links">
-            <li>
-                <a href="#">
-                    <i class='bx bx-search'></i>
-                    <span class="link_name search-box"><input type="text" placeholder="Search..."></span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Search</a></li>
-                    <!-- <li><span class="link_name"><input type="text" placeholder="Search..."></span></li> -->
-                </ul>
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class='bx bx-home'></i>
-                    <span class="link_name">Home</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Home</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="@Url.Action("Index", "QLSanPhams")">
-                        <!-- <i class='bx bx-collection' ></i> -->
-                        <i class="fa fa-gamepad"></i>
-                        <span class="link_name">Sản Phẩm</span>
+            @if (Session["TenDNNV"] != null)
+            {
+                <li>
+                    <a href="@Url.Action("Index", "HomeAdmin")">
+                        <i class='bx bx-home'></i>
+                        <span class="link_name">Trang chủ</span>
                     </a>
-                    @*<i class='bx bxs-chevron-down arrow'></i>*@
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLSanPhams")">Sản Phẩm</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="@Url.Action("Index", "QLNhaPhatTriens")">
-                        <i class="fa-solid fa-code"></i>
-                        <span class="link_name">NPT</span>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="@Url.Action("Index", "HomeAdmin")">Trang chủ</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                        <a href="@Url.Action("Index", "QLSanPhams")">
+                            <i class="fa fa-gamepad"></i>
+                            <span class="link_name">Sản Phẩm</span>
+                        </a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="@Url.Action("Index", "QLSanPhams")">Sản Phẩm</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                        <a href="@Url.Action("Index", "QLNhaPhatTriens")">
+                            <i class="fa-solid fa-code"></i>
+                            <span class="link_name">NPT</span>
+                        </a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="@Url.Action("Index", "QLNhaPhatTriens")">Nhà Phát Triển</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                        <a href="@Url.Action("Index", "QLLoaiSanPhams")">
+                            <i class='bx bxl-windows'></i>
+                            <span class="link_name">LSP</span>
+                        </a>
+                    </div>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="@Url.Action("Index", "QLLoaiSanPhams")">Loại Sản Phẩm</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                        <a href="@Url.Action("Index", "QLTheLoais")">
+                            <i class="fa-solid fa-tags"></i>
+                            <span class="link_name">TL</span>
+                        </a>
+                    </div>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="@Url.Action("Index", "QLTheLoais")">Thể Loại</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                        <a href="@Url.Action("Index", "QLNhanViens")">
+                            <i class="fa-solid fa-user-secret"></i>
+                            <span class="link_name">Nhân viên</span>
+                        </a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="@Url.Action("Index", "QLNhanViens")">Nhân viên</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "QLKhachHangs")">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="link_name">Khách hàng</span>
                     </a>
-                    @*<i class='bx bxs-chevron-down arrow'></i>*@
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLNhaPhatTriens")">Nhà Phát Triển</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="@Url.Action("Index", "QLLoaiSanPhams")">
-                        <i class='bx bxl-windows'></i>
-                        <span class="link_name">LSP</span>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="@Url.Action("Index", "QLKhachHangs")">Khách hàng</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class="fa-solid fa-computer"></i>
+                            <span class="link_name">Cấu hình</span>
+                        </a>
+                        <i class='bx bxs-chevron-down arrow'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Cấu hình</a></li>
+                        <li><a href="@Url.Action("Index", "QLCauHinhYeuCaus")">Cấu hình yêu cầu</a></li>
+                        <li><a href="@Url.Action("Index", "QLCauHinhKhuyenNghis")">Cấu hình khuyến nghị</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "QLHoaDons")">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Hóa Đơn</span>
                     </a>
-                </div>                
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLLoaiSanPhams")">Loại Sản Phẩm</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="@Url.Action("Index", "QLTheLoais")">
-                        <i class="fa-solid fa-tags"></i>
-                        <span class="link_name">TL</span>
-                    </a>
-                </div>               
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLTheLoais")">Thể Loại</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="@Url.Action("Index", "QLNhanViens")">
-                        <i class="fa-solid fa-user-secret"></i>
-                        <span class="link_name">Nhân viên</span>
-                    </a>
-                    @*<i class='bx bxs-chevron-down arrow'></i>*@
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLNhanViens")">Nhân viên</a></li>
-                    @*<li><a href="#">UI Face</a></li>
-                    <li><a href="#">Pigments</a></li>
-                    <li><a href="#">Box Icons</a></li>*@
-                </ul>
-            </li>
-            <li>
-                <a href="@Url.Action("Index", "QLKhachHangs")">
-                    <i class="fa-solid fa-user"></i>
-                    <span class="link_name">Khách hàng</span>
-                </a>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLKhachHangs")">Khách hàng</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="#">
-                        <i class="fa-solid fa-computer"></i>
-                        <span class="link_name">Cấu hình</span>
-                    </a>
-                    <i class='bx bxs-chevron-down arrow'></i>
-                </div>               
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#">Cấu hình</a></li>
-                    <li><a href="@Url.Action("Index", "QLCauHinhYeuCaus")">Cấu hình yêu cầu</a></li>
-                    <li><a href="@Url.Action("Index", "QLCauHinhKhuyenNghis")">Cấu hình khuyến nghị</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="@Url.Action("Index", "QLHoaDons")">
-                    <i class='bx bx-cog'></i>
-                    <span class="link_name">Hóa Đơn</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="@Url.Action("Index", "QLHoaDons")">Hóa Đơn</a></li>
-                </ul>
-            </li>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="@Url.Action("Index", "QLHoaDons")">Hóa Đơn</a></li>
+                    </ul>
+                </li>
+            }
             <li>
                 <div class="profile-details">
                     <div class="profile-content">
                         <i class='bx bxs-user-account'></i>
-                        <!-- <img src="image/profile.jpg" alt="profileImg"> -->
                     </div>
                     @if (Session["TenDNNV"] != null)
                     {
                         <div class="name-job">
                             <div class="profile_name">@Session["TenDNNV"].ToString()</div>
-                            @*<div class="job">Web Desginer</div>*@
                         </div>
-                        <a href="@Url.Action("Logoff", "HomeAdmin")"><i class='bx bx-log-out'></i></a>
+                            <a href="@Url.Action("Logoff", "HomeAdmin")"><i class='bx bx-log-out'></i></a>
                     }
                     else
                     {
                         <div class="name-job">
                             <div class="profile_name">@Html.ActionLink("Đăng nhập", "Login", "HomeAdmin")</div>
-                            @*Đăng nhập*@
                             <div class="job">Quản Trị</div>
                         </div>
-                        <i></i>
+                            <i></i>
                     }
                 </div>
             </li>

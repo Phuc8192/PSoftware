@@ -45,7 +45,7 @@
                     @Html.Partial("_SearchPartial")
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Search</a></li>
+                    <li><a class="link_name" href="#">Tìm kiếm</a></li>
                     <!-- <li><span class="link_name"><input type="text" placeholder="Search..."></span></li> -->
                 </ul>
             </li>
@@ -53,10 +53,10 @@
             <li>
                 <a href="@Url.Action("Index", "Home")">
                     <i class='bx bx-home'></i>
-                    <span class="link_name">Home</span>
+                    <span class="link_name">Trang chủ</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><a class="link_name" href="@Url.Action("Index", "Home")">Trang chủ</a></li>
                 </ul>
             </li>
             <li>
@@ -84,23 +84,10 @@
                     <a href="@Url.Action("IndexGame", "LoaiSanPhams")">
                         <i class='bx bx-film'></i>
                         <span class="link_name">Game</span>
-                    </a>
-                    <i class='bx bxs-chevron-down arrow'></i>
+                    </a>                   
                 </div>
                 <ul class="sub-menu">
-                    <li><a class="link_name" href="@Url.Action("IndexGame", "LoaiSanPhams")">Game</a></li>
-                    @*<li><a href="#">Action</a></li>
-                    <li><a href="#">Adventure</a></li>
-                    <li><a href="#">Horror</a></li>
-                    <li><a href="#">Detective</a></li>
-                    <li><a href="#">Documentary</a></li>
-                    <li><a href="#">Cartoon</a></li>
-                    <li><a href="#">Crime & Gangster</a></li>
-                    <li><a href="#">Westerns</a></li>
-                    <li><a href="#">Science Fiction</a></li>
-                    <li><a href="#">Historical</a></li>
-                    <li><a href="#">War</a></li>
-                    <li><a href="#">Family</a></li>*@
+                    <li><a class="link_name" href="@Url.Action("IndexGame", "LoaiSanPhams")">Game</a></li>                  
                 </ul>
             </li>
             <li>
@@ -115,46 +102,57 @@
             <li>
                 <a href="@Url.Action("Index", "Cart")">
                     <i class='bx bx-cart'></i>
-                    <span class="link_name">Cart</span>
+                    <span class="link_name">Giỏ Hàng</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="@Url.Action("Index", "Cart")">Cart</a></li>
+                    <li><a class="link_name" href="@Url.Action("Index", "Cart")">Giỏ Hàng</a></li>
                 </ul>
             </li>
             <li>
-                <div class="iocn-link">
-                    <a href="#">
-                        <i class='bx bx-plug'></i>
-                        <span class="link_name">Plugins</span>
+                @if (Session["TenDN"] != null)
+                {
+                    <a href="@Url.Action("Index", "User", new { id = Session["MaKH"]})">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="link_name">Thông tin</span>
                     </a>
-                    <i class='bx bxs-chevron-down arrow'></i>
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#">Plugins</a></li>
-                    <li><a href="#">UI Face</a></li>
-                    <li><a href="#">Pigments</a></li>
-                    <li><a href="#">Box Icons</a></li>
-                </ul>
-            </li>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="@Url.Action("Index", "User", new { id = Session["MaKH"]})">Thông tin</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <a href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="link_name">Thông tin</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');">Thông tin</a></li>
+                    </ul>
+                }
+            </li>            
             <li>
-                <a href="#">
-                    <i class='bx bx-compass'></i>
-                    <span class="link_name">Explore</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Explore</a></li>
-                </ul>
+                @if (Session["TenDN"] != null)
+                {
+                    <a href="@Url.Action("Index", "HoaDons", new { id = Session["MaKH"]})">
+                        <i class='bx bx-history'></i>
+                        <span class="link_name">Lịch sử</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="@Url.Action("Index", "HoaDons", new { id = Session["MaKH"]})">Lịch sử</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <a href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');">
+                        <i class='bx bx-history'></i>
+                        <span class="link_name">Lịch sử</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#" onclick="return confirm('Bạn phải đăng nhập để xem!');">Lịch sử</a></li>
+                    </ul>
+                }
             </li>
-            <li>
-                <a href="@Url.Action("Index", "HoaDons", new { id = Session["MaKH"]})">
-                    <i class='bx bx-history'></i>
-                    <span class="link_name">History</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="@Url.Action("Index", "HoaDons", new { id = Session["MaKH"]})">History</a></li>
-                </ul>
-            </li>
-            <li>
+            @*<li>
                 <a href="#">
                     <i class='bx bx-cog'></i>
                     <span class="link_name">Setting</span>
@@ -162,7 +160,7 @@
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="#">Setting</a></li>
                 </ul>
-            </li>
+            </li>*@
             <li>
                 <div class="profile-details">
                     <div class="profile-content">

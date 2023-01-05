@@ -140,7 +140,7 @@ namespace PSoftware.Controllers
             }
         }
 
-        public ActionResult XoaHDTB(string id)  //Xóa hóa đơn thanh toán thất bại
+        public ActionResult XoaHDTB(Guid id)  //Xóa hóa đơn thanh toán thất bại
         {
             HoaDon hOADON = db.HoaDons.Find(id);
             db.HoaDons.Remove(hOADON);

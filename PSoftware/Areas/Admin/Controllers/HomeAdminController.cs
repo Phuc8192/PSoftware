@@ -13,7 +13,15 @@ namespace PSoftware.Areas.Admin.Controllers
         // GET: Admin/HomeAdmin
         public ActionResult Index()
         {
-            return View();
+            ViewBag.hoaDon = db.HoaDons.Count(x => x.TrangThai == true);
+            ViewBag.doanhThu = db.HoaDons.Where(x => x.TrangThai == true).ToList().Sum(x => x.ChiTietHoaDons.Sum(n => n.Gia * n.SoLuong));
+            ViewBag.khachHang = db.KhachHangs.Count();
+            ViewBag.sanPham = db.SanPhams.Count();
+            ViewBag.nhanVien = db.NhanViens.Count();
+            ViewBag.theLoai = db.TheLoais.Count();
+            ViewBag.NPT = db.NhaPhatTriens.Count();
+            ViewBag.LSP = db.LoaiSanPhams.Count();
+            return View();           
         }
 
         public ActionResult Logoff()
